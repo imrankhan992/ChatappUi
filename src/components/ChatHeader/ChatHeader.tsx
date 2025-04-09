@@ -1,7 +1,7 @@
 import { Phone, Video, MoreVertical, Search, ArrowLeft, DotIcon, CircleDotIcon, CopyIcon, SaveIcon, ForwardIcon, DeleteIcon, MoreHorizontal, MoreHorizontalIcon, ChevronLeft } from 'lucide-react';
 import { User } from '../types';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
-
+import "./chatheader.css"
 interface ChatHeaderProps {
   user: User;
   onBack: () => void;

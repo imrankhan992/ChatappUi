@@ -1,6 +1,6 @@
 import { MessageSquare, Users, Phone, Settings, Sun, Moon, LogOut, UserRound, MessageSquareMore, Speech, Globe, Globe2 } from 'lucide-react';
 import { useState } from 'react';
-
+import "./sidebar.css"
 interface SidebarProps {
   activePage: string;
   onPageChange: (page: string) => void;

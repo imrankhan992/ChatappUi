@@ -1,0 +1,76 @@
+/* Users List */
+.users-list-container {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .users-list {
+    padding: 16px;
+  }
+  
+  .user-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    gap: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .user-item:hover {
+    background: var(--bg-secondary);
+  }
+  
+  .user-item.selected {
+    background: var(--bg-secondary);
+  }
+  
+  .user-avatar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .user-info {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .user-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  
+  .user-last-message {
+    font-size: 14px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .user-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+  
+  .user-timestamp {
+    font-size: 11px;
+    color: var(--text-secondary);
+  }
+  
+  .unread-badge {
+    background: #ef476f2e;
+    color: #ef476f;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 12px;
+    min-width: 20px;
+    text-align: center;
+  }
+  

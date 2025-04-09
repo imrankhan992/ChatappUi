@@ -1,0 +1,28 @@
+.search-container {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .search-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 12px 16px 12px 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--pin-user-bg);
+        color: var(--text-secondary);
+    font-size: 15px;
+   
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+  }

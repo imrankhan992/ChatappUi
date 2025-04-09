@@ -1,13 +1,20 @@
 import { useState, useEffect } from "react";
-import { Sidebar } from "./components/Sidebar";
-import { UserSearch } from "./components/UserSearch";
-import { UserList } from "./components/UserList";
-import { ChatHeader } from "./components/ChatHeader";
-import { MessageBubble } from "./components/MessageBubble";
-import { MessageInput } from "./components/MessageInput";
+
+
+
+
+
+
 import { users, pinnedUserIds, userMessages } from "./data/users";
 import { User, Message } from "./types";
 import { BlankPage } from "./components/BlankPage";
+import { ChatHeader } from "./components/ChatHeader/ChatHeader";
+import { MessageBubble } from "./components/MessageBubble/MessageBubble";
+import { MessageInput } from "./components/MessageInput/MessageInput";
+import { UserSearch } from "./components/UserSearch/UserSearch";
+import { UserList } from "./components/UserList/UserList";
+import { Sidebar } from "./components/Sliderbar/Siderbar";
+
 
 function App() {
   const [selectedUser, setSelectedUser] = useState<User | null>(null);

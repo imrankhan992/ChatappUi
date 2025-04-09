@@ -2,6 +2,7 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { Message } from '../types';
 import { CopyIcon, DeleteIcon, Download, FileIcon, ForwardIcon, MoreVertical, SaveIcon, TimerIcon } from 'lucide-react';
 import { useState } from 'react';
+import "./MessageBubble.css";
 interface MessageBubbleProps extends Message {
   senderFirstName: string;
   senderLastName: string;

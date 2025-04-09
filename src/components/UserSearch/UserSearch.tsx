@@ -1,5 +1,5 @@
 import { Search } from 'lucide-react';
-
+import "./usersearch.css"
 interface UserSearchProps {
   value: string;
   onChange: (value: string) => void;

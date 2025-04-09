@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Smile, Paperclip, Send, Image, SendHorizontalIcon } from 'lucide-react';
-
+import "./message_input.css"
 interface MessageInputProps {
   onSendMessage: (content: string, type?: 'text' | 'image' | 'file', files?: File[]) => void;
   onFileUpload: (files: File[]) => void;
