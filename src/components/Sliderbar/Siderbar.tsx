@@ -1,6 +1,19 @@
-import { MessageSquare, Users, Phone, Settings, Sun, Moon, LogOut, UserRound, MessageSquareMore, Speech, Globe, Globe2 } from 'lucide-react';
 import { useState } from 'react';
-import "./sidebar.css"
+import {
+  MessageSquareMore,
+  Users,
+  Settings,
+  Speech,
+  Globe2,
+  UserRound,
+} from 'lucide-react';
+import {
+  SidebarNavButton,
+  ThemeToggleButton,
+  AvatarIcon
+} from '../branding';
+import "./sidebar.css";
+
 interface SidebarProps {
   activePage: string;
   onPageChange: (page: string) => void;
@@ -11,13 +24,12 @@ export function Sidebar({ activePage, onPageChange, onThemeToggle }: SidebarProp
   const [isDark, setIsDark] = useState(false);
 
   const navItems = [
-    { id: 'profile', icon: UserRound, label: 'Profile' , hide:false  },
-    { id: 'chats', icon: MessageSquareMore, label: 'Chats' , hide:false  },
-    { id: 'groups', icon: Users, label: 'Groups' ,hide:false },
-   
-    { id: 'contacts', icon: Speech, label: 'Contacts', hide:true  },
-    { id: 'settings', icon: Settings, label: 'Settings',hide:false  },
-    { id: 'globe', icon: Globe2, label: 'Language',hide:true }
+    { id: 'profile', icon: UserRound, label: 'Profile', hide: false },
+    { id: 'chats', icon: MessageSquareMore, label: 'Chats', hide: false },
+    { id: 'groups', icon: Users, label: 'Groups', hide: false },
+    { id: 'contacts', icon: Speech, label: 'Contacts', hide: true },
+    { id: 'settings', icon: Settings, label: 'Settings', hide: false },
+    { id: 'globe', icon: Globe2, label: 'Language', hide: true }
   ];
 
   const handleThemeToggle = () => {
@@ -32,57 +44,40 @@ export function Sidebar({ activePage, onPageChange, onThemeToggle }: SidebarProp
         <div className="logo">C</div>
       </div>
 
-      {/* Middle - Main navigation icons (first 5) */}
+      {/* Middle - Main navigation icons */}
       <div className="sidebar-middle">
         <ul className="nav-list">
           {navItems.slice(0, 5).map((item) => (
             <li key={item.id} className="nav-item">
-              <button
+              <SidebarNavButton
+                icon={item.icon}
+                isActive={activePage === item.id}
                 onClick={() => onPageChange(item.id)}
-                className={`nav-button ${item.hide===true ?"true":"false"} ${activePage === item.id ? 'active' : ''}`}
+                hidden={item.hide}
                 title={item.label}
-              >
-                <item.icon size={20} />
-              </button>
+              />
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Bottom - Settings, Theme Toggle, Logout */}
+      {/* Bottom - Settings, Theme Toggle, Avatar */}
       <div className="sidebar-bottom">
         <ul className="nav-list">
           <li className="nav-item">
-            <button
+            <SidebarNavButton
+              icon={Globe2}
+              isActive={activePage === 'globe'}
               onClick={() => onPageChange('globe')}
-              className={`nav-button true ${activePage === 'globe' ? 'active' : ''}`}
+              hidden={true}
               title="Globe"
-
-            >
-              <Globe size={20} />
-            </button>
+            />
           </li>
           <li className="nav-item">
-            <button
-              onClick={handleThemeToggle}
-              className="nav-button"
-              title={isDark ? 'Light Mode' : 'Dark Mode'}
-            >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+            <ThemeToggleButton isDark={isDark} onToggle={handleThemeToggle} />
           </li>
           <li className="nav-item">
-           
-
-            <div className="">
-          <img
-            src={"https://avatar.iran.liara.run/username?username=A"}
-            alt={`https://avatar.iran.liara.run/A=Scott+Wilson`}
-            className=""
-            width={40}
-          />
-        
-        </div>
+            <AvatarIcon src="https://avatar.iran.liara.run/username?username=A" />
           </li>
         </ul>
       </div>

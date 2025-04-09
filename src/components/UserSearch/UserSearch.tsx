@@ -1,5 +1,6 @@
-import { Search } from 'lucide-react';
-import "./usersearch.css"
+import "./usersearch.css";
+import { SearchInput } from '../branding';
+
 interface UserSearchProps {
   value: string;
   onChange: (value: string) => void;
@@ -8,16 +9,11 @@ interface UserSearchProps {
 export function UserSearch({ value, onChange }: UserSearchProps) {
   return (
     <div className="search-container">
-      <div className="search-wrapper">
-        <input
-          type="text"
-          placeholder="Search messages or users"
-          className="search-input"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-        />
-        <Search className="search-icon" size={18} />
-      </div>
+      <SearchInput
+        value={value}
+        onChange={onChange}
+        placeholder="Search messages or users"
+      />
     </div>
   );
 }
